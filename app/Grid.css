@@ -1,0 +1,105 @@
+.grid {
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    border: none;
+    padding: 0px 0px;
+    float: left;
+}
+
+.snake {
+	composes : grid;
+	background-color: red;
+}
+
+.headUp {
+	composes : grid;
+	background-image: url('/app/assests/head_1.png');
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.headRight {
+	composes: headUp;
+    transform: rotate(90deg);
+}
+
+.headDown {
+	composes: headUp;
+    transform: rotate(180deg);
+}
+
+.headLeft {
+	composes: headUp;
+    transform: rotate(270deg);
+}
+
+.curve {
+	composes : grid;
+	background-image: url('/app/assests/curve_1.png');
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.curveRightDownDown, .curveUpLeftLeft, .curveUpLeftUp, .curveRightDownRight, .curveUpLeftDown, .curveRightDownLeft {
+	composes : curve;
+}
+
+.curveDownLeftUp, .curveRightUpUp, .curveDownLeftLeft, .curveDownLeftDown, .curveRightUpRight, .curveRightUpLeft {
+	composes : curve;
+	transform: rotate(90deg);
+}
+
+.curveLeftUpUp, .curveDownRightUp, .curveDownRightRight, .curveDownRightDown, .curveLeftUpLeft, .curveLeftUpRight {
+	composes : curve;
+	transform: rotate(180deg);
+}
+
+.curveLeftDownDown, .curveUpRightRight, .curveUpRightUp, .curveLeftDownLeft, .curveUpRightDown, .curveLeftDownRight {
+	composes : curve;
+	transform: rotate(270deg);
+}
+
+.tailUp {
+	composes : grid;
+	background-image: url('/app/assests/tail_1.png');
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.tailRight {
+	composes: tailUp;
+    transform: rotate(90deg);
+}
+
+.tailDown {
+	composes: tailUp;
+    transform: rotate(180deg);
+}
+
+.tailLeft {
+	composes: tailUp;
+    transform: rotate(270deg);
+}
+
+.bodyUp, .bodyDown {
+	composes : grid;
+	background-image: url('/app/assests/body_1.png');
+    background-size: 100% 130%;
+    background-repeat: no-repeat;
+}
+
+.bodyLeft {
+	composes: bodyUp;
+	transform: rotate(90deg);
+}
+
+.bodyRight {
+	composes: bodyLeft;
+}
+
+.food {
+	composes : grid;
+	background-image: url('/app/assests/food.png');
+	background-size: 100% 100%;
+}
